@@ -138,3 +138,5 @@ xf86-video-vesa
 xf86-video-qxl
 xf86-video-ati
 firefox
+bluez
+bluez-utils
