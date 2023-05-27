@@ -1,0 +1,5 @@
+root:x:0:root
+wheel:x:998:user
+audio:x:996:user
+video:x:985:user
+users:x:984:user
