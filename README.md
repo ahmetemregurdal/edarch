@@ -1,1 +1,1 @@
-# archinstall
+# edarch
