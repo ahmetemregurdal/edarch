@@ -140,32 +140,5 @@ firefox
 bluez
 bluez-utils
 blueman
-# base stuff
-archlinux-keyring
-bash
-bzip2
-coreutils
-file
-findutils
-gawk
-gcc-libs
-gettext
-glibc
-grep
-gzip
-iproute2
-iputils
-licenses
-pacman
-pciutils
-procps-ng
-psmisc
-sed
-shadow
-systemd
-systemd-sysvcompat
-tar
-util-linux
-xz
+base
 # edarch custom repo
-edarchfilesystem
