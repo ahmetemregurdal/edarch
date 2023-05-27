@@ -3,7 +3,6 @@ amd-ucode
 arch-install-scripts
 archinstall
 b43-fwcutter
-base
 bind
 brltty
 broadcom-wl
@@ -140,3 +139,33 @@ xf86-video-ati
 firefox
 bluez
 bluez-utils
+blueman
+# base stuff
+archlinux-keyring
+bash
+bzip2
+coreutils
+file
+findutils
+gawk
+gcc-libs
+gettext
+glibc
+grep
+gzip
+iproute2
+iputils
+licenses
+pacman
+pciutils
+procps-ng
+psmisc
+sed
+shadow
+systemd
+systemd-sysvcompat
+tar
+util-linux
+xz
+# edarch custom repo
+edarchfilesystem
