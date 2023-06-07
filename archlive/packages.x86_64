@@ -6,6 +6,7 @@ b43-fwcutter
 bind
 brltty
 broadcom-wl
+base
 btrfs-progs
 clonezilla
 cloud-init
