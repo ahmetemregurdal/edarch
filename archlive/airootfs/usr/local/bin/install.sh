@@ -53,7 +53,7 @@ if [[ ${SWAPNAME} != "n" ]]; then
 	swapon "$SWAP"
 fi
 echo "bootstraping"
-pacstrap -K /mnt base pipewire pipewire-alsa pipewire-jack pipewire-pulse libreoffice-fresh plasma-meta krusader ranger btop neovim thunderbird firefox geogebra code neovim blueman plasma-nm linux linux-firmware networkmanager freecad blender nano man-db e2fsprogs ntfs-3g dosfstools grub efibootmgr gnome gdm xf86-video-openchrome xf86-video-nouveau xf86-video-sisusb xf86-video-amdgpu xf86-video-vmware xf86-video-voodoo xf86-video-fbdev xf86-video-intel xf86-video-dummy xf86-video-vesa xf86-video-qxl xf86-video-ati
+pacstrap -K /mnt base linux linux-firmware networkmanager nano man-db e2fsprogs ntfs-3g dosfstools grub efibootmgr xf86-video-openchrome xf86-video-nouveau xf86-video-sisusb xf86-video-amdgpu xf86-video-vmware xf86-video-voodoo xf86-video-fbdev xf86-video-intel xf86-video-dummy xf86-video-vesa xf86-video-qxl xf86-video-ati
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "entering chroot"
 arch-chroot /mnt /bin/bash -i << EOF
@@ -82,6 +82,7 @@ GRUB_DISABLE_OS_PROBER=false
 EOR
 grub-mkconfig -o /boot/grub/grub.cfg
 echo "root:root" | chpasswd
+pacman -S --noconfirm pipewire pipewire-alsa pipewire-jack pipewire-pulse gnome gdm
 ln -s /usr/lib/systemd/system/gdm.service /etc/systemd/system/display-manager.service
 ln -s /usr/lib/systemd/system/NetworkManager.service /etc/systemd/system/multi-user.target.wants/NetworkManager.service
 ln -s /usr/lib/systemd/system/NetworkManager-dispatcher.service /etc/systemd/system/dbus-org.freedesktop.nm-dispatcher.service
@@ -102,6 +103,124 @@ chown user /home/user/Desktop
 chown user /home/user/Videos
 chown user /home/user/Pictures
 chown user /home/user/Music
+pacman -S --noconfirm libreoffice-fresh krusader ranger btop neovim thunderbird firefox geogebra neovim blueman freecad blender gimp krita git base-devel sudo esptool hicolor-icon-theme mypy python-asttokens python-docutils python-jedi python-pillow python-pip python-ptyprocess python-pylint python-send2trash python-setuptools python-wheel python-build python-installer tk python-numpy python-pygame python-cached-property python python-django python-pytest python-humanize python-littleutils python-sqalchemy python-setuptools-scm python-beautifulsoup4 python-flask python-markupsafe python-pandas geckodriver python-requests python-certifi python-debugpy python-importlib-metadata python-inflection python-multidict python-urllib3 alsa-lib gcc-libs glibc gnupg gtk3 libnotify libsecret libxkbfile libxss lsof nss shared-mime-info xdg-info glib2 libdbusmenu-glib gnome-keyring cpio openssl-1.1 libappindicator-gtk3 clang make sh patch dbus-glib libldap libxml2 polkit gnome-common gobject-introspection gtk-doc intltool nemo
+git clone https://aur.archlinux.org/yay.git
+su user << EOR
+cd yay
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm yay/yay*.tar.zst
+rm -rf yay
+cat >> /etc/sudoers << EOR
+root ALL=(ALL:ALL) ALL
+ALL ALL=(ALL:ALL) ALL
+@includedir /etc/sudoers.d
+EOR
+git clone https://aur.archlinux.org/python-trio-websocket.git
+cd python-trio-websocket
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm python-trio-websocket/python-trio-websocket*.tar.zst
+rm -rf python-trio-websocket
+git clone https://aur.archlinux.org/python-outdated.git
+cd python-outdated
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm python-outdated/python-outdated*.tar.zst
+rm -rf python-outdated
+git clone https://aur.archlinux.org/python-cheap_repr.git
+cd python-cheap_repr
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm python-cheap_repr/python-cheap_repr*.tar.zst
+rm -rf python-cheap_repr
+git clone https://aur.archlinux.org/python-flask-humanize.git
+cd python-flask-humanize
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm python-flask-humanize/python-flask-humanize*.tar.zst
+rm -rf python-flask-humanize
+git clone https://aur.archlinux.org/python-pgzero.git
+cd python-pgzero
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm python-pgzero/python-pgzero*.tar.zst
+rm -rf python-pgzero
+git clone https://aur.archlinux.org/python-selenium.git
+cd python-selenium
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm python-selenium/python-selenium*.tar.zst
+rm -rf python-selenium
+git clone https://aur.archlinux.org/python-birdseye.git
+cd python-birdseye
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm python-birdseye/python-birdseye*.tar.zst
+rm -rf python-birdseye
+git clone https://aur.archlinux.org/thonny.git
+su user << EOR
+cd thonny
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm thonny/thonny*.tar.zst
+rm -rf thonny
+git clone https://aur.archlinux.org/visual-studio-code-bin.git
+su user << EOR
+cd visual-studio-code-bin
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm visual-studio-code-bin/visual-studio-code-bin*.tar.zst
+rm -rf visual-studio-code-bin
+git clone https://aur.archlinux.org/libicu50.git
+su user << EOR
+cd libicu50
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm libicu50/libicu50*.tar.zst
+rm -rf libicu50
+git clone https://aur.archlinux.org/gconf.git
+su user << EOR
+cd gconf
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm gconf/gconf*.tar.zst
+rm -rf gconf
+git clone https://aur.archlinux.org/icu70.git
+su user << EOR
+cd icu70
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm icu70/icu70*.tar.zst
+rm -rf icu70
+git clone https://aur.archlinux.org/icu69.git
+su user << EOR
+cd icu69
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm icu69/icu69*.tar.zst
+rm -rf icu69
+git clone https://aur.archlinux.org/unityhub.git
+cd unityhub
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm unityhub/unityhub*.tar.zst
+rm -rf unityhub
 EOF
 echo "rebooting"
 sleep 3
