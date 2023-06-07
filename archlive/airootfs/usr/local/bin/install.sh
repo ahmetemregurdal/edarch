@@ -53,7 +53,7 @@ if [[ ${SWAPNAME} != "n" ]]; then
 	swapon "$SWAP"
 fi
 echo "bootstraping"
-pacstrap -K /mnt base pipewire pipewire-alsa pipewire-jack pipewire-pulse libreoffice-fresh plasma-meta krusader ranger btop neovim thunderbird firefox geogebra code neovim blueman plasma-nm linux linux-firmware networkmanager freecad blender nano man-db e2fsprogs ntfs-3g dosfstools grub efibootmgr gnome gdm
+pacstrap -K /mnt base pipewire pipewire-alsa pipewire-jack pipewire-pulse libreoffice-fresh plasma-meta krusader ranger btop neovim thunderbird firefox geogebra code neovim blueman plasma-nm linux linux-firmware networkmanager freecad blender nano man-db e2fsprogs ntfs-3g dosfstools grub efibootmgr gnome gdm xf86-video-openchrome xf86-video-nouveau xf86-video-sisusb xf86-video-amdgpu xf86-video-vmware xf86-video-voodoo xf86-video-fbdev xf86-video-intel xf86-video-dummy xf86-video-vesa xf86-video-qxl xf86-video-ati
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "entering chroot"
 arch-chroot /mnt /bin/bash -i << EOF
