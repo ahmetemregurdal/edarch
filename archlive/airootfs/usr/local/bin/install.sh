@@ -107,7 +107,7 @@ chown user /home/user/Desktop
 chown user /home/user/Videos
 chown user /home/user/Pictures
 chown user /home/user/Music
-pacman -S --noconfirm libreoffice-fresh krusader ranger btop neovim thunderbird firefox geogebra neovim blueman freecad blender gimp krita git base-devel sudo esptool hicolor-icon-theme mypy python-asttokens python-docutils python-jedi python-pillow python-pip python-ptyprocess python-pylint python-send2trash python-setuptools python-wheel python-build python-installer tk python-numpy python-pygame python-cached-property python python-django python-pytest python-humanize python-littleutils python-sqlalchemy python-setuptools-scm python-beautifulsoup4 python-flask python-markupsafe python-pandas geckodriver python-requests python-certifi python-debugpy python-importlib-metadata python-inflection python-multidict python-urllib3 alsa-lib gcc-libs glibc gnupg gtk3 libnotify libsecret libxkbfile libxss lsof nss shared-mime-info glib2 libdbusmenu-glib gnome-keyring cpio openssl-1.1 libappindicator-gtk3 clang make sh patch dbus-glib libldap libxml2 polkit gnome-common gobject-introspection gtk-doc intltool nemo go python-exceptiongroup python-trio python-wsproto xorg-drivers xorg xorg-apps appstream-glib archlinux-appstream-data desktop-file-utils gnutls json-glib libhandy vte3 asciidoc gettext itstool meson ninja vala xorgproto lxsession polkit-gnome libsoup3 libusb libusb-compat python-pyserial usbutils freetype2 libxrender libxtst which gtk2 libglvnd libpng zlib libxft tcl gumbo-parser libjpeg-turbo libtiff tcllib
+pacman -S --noconfirm libreoffice-fresh krusader ranger btop neovim thunderbird firefox geogebra neovim blueman freecad blender gimp krita git base-devel sudo esptool hicolor-icon-theme mypy python-asttokens python-docutils python-jedi python-pillow python-pip python-ptyprocess python-pylint python-send2trash python-setuptools python-wheel python-build python-installer tk python-numpy python-pygame python-cached-property python python-django python-pytest python-humanize python-littleutils python-sqlalchemy python-setuptools-scm python-beautifulsoup4 python-flask python-markupsafe python-pandas geckodriver python-requests python-certifi python-debugpy python-importlib-metadata python-inflection python-multidict python-urllib3 alsa-lib gcc-libs glibc gnupg gtk3 libnotify libsecret libxkbfile libxss lsof nss shared-mime-info glib2 libdbusmenu-glib gnome-keyring cpio openssl-1.1 libappindicator-gtk3 clang make sh patch dbus-glib libldap libxml2 polkit gnome-common gobject-introspection gtk-doc intltool nemo go python-exceptiongroup python-trio python-wsproto xorg-drivers xorg xorg-apps appstream-glib archlinux-appstream-data desktop-file-utils gnutls json-glib libhandy vte3 asciidoc gettext itstool meson ninja vala xorgproto lxsession polkit-gnome libsoup3 libusb libusb-compat python-pyserial usbutils freetype2 libxrender libxtst which gtk2 libglvnd libpng zlib libxft tcl gumbo-parser libjpeg-turbo libtiff tcllib maven jre17-openjdk xdg-utils npm nodejs-lts-fermium snappy re2 minizip libxslt libevent ffmpeg c-ares kde-cli-tools trash-cli xdg-desktop-portal util-linux fuse2
 git clone https://aur.archlinux.org/yay-bin.git
 chown admin yay-bin
 su admin << EOR
@@ -320,15 +320,15 @@ cd ..
 EOR
 pacman -U --noconfirm tkimg/tkimg*.tar.zst
 rm -rf tkimg
-git clone https://aur.archlinux.org/scid.git
-chown admin scid
+git clone https://aur.archlinux.org/jerry.git
+chown admin jerry
 su admin << EOR
-cd scid
+cd jerry
 makepkg
 cd ..
 EOR
-pacman -U --noconfirm scid/scid*.tar.zst
-rm -rf scid
+pacman -U --noconfirm jerry/jerry*.tar.zst
+rm -rf jerry
 git clone https://aur.archlinux.org/stockfish.git
 chown admin stockfish
 su admin << EOR
@@ -339,6 +339,33 @@ EOR
 pacman -U --noconfirm stockfish/stockfish*.tar.zst
 rm -rf stockfish
 pacman -Rsu gnome-software
+git clone https://aur.archlinux.org/electron13-bin.git
+chown admin electron13-bin
+su admin << EOR
+cd electron13-bin
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm electron13-bin/electron13-bin*.tar.zst
+rm -rf electron13-bin
+git clone https://aur.archlinux.org/scratch3.git
+chown admin scratch3
+su admin << EOR
+cd scratch3
+makepkg scratch3
+cd ..
+EOR
+pacman -U --noconfirm scratch3/scratch3*.tar.zst
+rm -rf scratch3
+git clone https://aur.archlinux.org/cura-bin.git
+chown admin cura-bin
+su admin << EOR
+cd cura-bin
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm cura-bin/cura-bin*.tar.zst
+rm -rf cura-bin
 EOF
 echo "rebooting"
 sleep 3
