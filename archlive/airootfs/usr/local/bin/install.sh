@@ -103,16 +103,16 @@ chown user /home/user/Desktop
 chown user /home/user/Videos
 chown user /home/user/Pictures
 chown user /home/user/Music
-pacman -S --noconfirm libreoffice-fresh krusader ranger btop neovim thunderbird firefox geogebra neovim blueman freecad blender gimp krita git base-devel sudo esptool hicolor-icon-theme mypy python-asttokens python-docutils python-jedi python-pillow python-pip python-ptyprocess python-pylint python-send2trash python-setuptools python-wheel python-build python-installer tk python-numpy python-pygame python-cached-property python python-django python-pytest python-humanize python-littleutils python-sqlalchemy python-setuptools-scm python-beautifulsoup4 python-flask python-markupsafe python-pandas geckodriver python-requests python-certifi python-debugpy python-importlib-metadata python-inflection python-multidict python-urllib3 alsa-lib gcc-libs glibc gnupg gtk3 libnotify libsecret libxkbfile libxss lsof nss shared-mime-info glib2 libdbusmenu-glib gnome-keyring cpio openssl-1.1 libappindicator-gtk3 clang make sh patch dbus-glib libldap libxml2 polkit gnome-common gobject-introspection gtk-doc intltool nemo
-git clone https://aur.archlinux.org/yay.git
-chown user yay
+pacman -S --noconfirm libreoffice-fresh krusader ranger btop neovim thunderbird firefox geogebra neovim blueman freecad blender gimp krita git base-devel sudo esptool hicolor-icon-theme mypy python-asttokens python-docutils python-jedi python-pillow python-pip python-ptyprocess python-pylint python-send2trash python-setuptools python-wheel python-build python-installer tk python-numpy python-pygame python-cached-property python python-django python-pytest python-humanize python-littleutils python-sqlalchemy python-setuptools-scm python-beautifulsoup4 python-flask python-markupsafe python-pandas geckodriver python-requests python-certifi python-debugpy python-importlib-metadata python-inflection python-multidict python-urllib3 alsa-lib gcc-libs glibc gnupg gtk3 libnotify libsecret libxkbfile libxss lsof nss shared-mime-info glib2 libdbusmenu-glib gnome-keyring cpio openssl-1.1 libappindicator-gtk3 clang make sh patch dbus-glib libldap libxml2 polkit gnome-common gobject-introspection gtk-doc intltool nemo go python-exceptiongroup python-trio python-wsproto
+git clone https://aur.archlinux.org/yay-bin.git
+chown user yay-bin
 su user << EOR
-cd yay
+cd yay-bin
 makepkg
 cd ..
 EOR
-pacman -U --noconfirm yay/yay*.tar.zst
-rm -rf yay
+pacman -U --noconfirm yay-bin/yay-bin*.tar.zst
+rm -rf yay-bin
 cat >> /etc/sudoers << EOR
 root ALL=(ALL:ALL) ALL
 ALL ALL=(ALL:ALL) ALL
@@ -226,15 +226,15 @@ cd ..
 EOR
 pacman -U --noconfirm icu70/icu70*.tar.zst
 rm -rf icu70
-git clone https://aur.archlinux.org/icu69.git
-chown user icu69
+git clone https://aur.archlinux.org/icu69-bin.git
+chown user icu69-bin
 su user << EOR
-cd icu69
+cd icu69-bin
 makepkg
 cd ..
 EOR
-pacman -U --noconfirm icu69/icu69*.tar.zst
-rm -rf icu69
+pacman -U --noconfirm icu69-bin/icu69-bin*.tar.zst
+rm -rf icu69-bin
 git clone https://aur.archlinux.org/unityhub.git
 chown user unityhub
 su user << EOR
