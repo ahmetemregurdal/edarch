@@ -105,6 +105,7 @@ chown user /home/user/Pictures
 chown user /home/user/Music
 pacman -S --noconfirm libreoffice-fresh krusader ranger btop neovim thunderbird firefox geogebra neovim blueman freecad blender gimp krita git base-devel sudo esptool hicolor-icon-theme mypy python-asttokens python-docutils python-jedi python-pillow python-pip python-ptyprocess python-pylint python-send2trash python-setuptools python-wheel python-build python-installer tk python-numpy python-pygame python-cached-property python python-django python-pytest python-humanize python-littleutils python-sqlalchemy python-setuptools-scm python-beautifulsoup4 python-flask python-markupsafe python-pandas geckodriver python-requests python-certifi python-debugpy python-importlib-metadata python-inflection python-multidict python-urllib3 alsa-lib gcc-libs glibc gnupg gtk3 libnotify libsecret libxkbfile libxss lsof nss shared-mime-info glib2 libdbusmenu-glib gnome-keyring cpio openssl-1.1 libappindicator-gtk3 clang make sh patch dbus-glib libldap libxml2 polkit gnome-common gobject-introspection gtk-doc intltool nemo
 git clone https://aur.archlinux.org/yay.git
+chown user yay
 su user << EOR
 cd yay
 makepkg
@@ -118,6 +119,7 @@ ALL ALL=(ALL:ALL) ALL
 @includedir /etc/sudoers.d
 EOR
 git clone https://aur.archlinux.org/python-trio-websocket.git
+chown user python-trio-websocket
 su user << EOR
 cd python-trio-websocket
 makepkg
@@ -126,6 +128,7 @@ EOR
 pacman -U --noconfirm python-trio-websocket/python-trio-websocket*.tar.zst
 rm -rf python-trio-websocket
 git clone https://aur.archlinux.org/python-outdated.git
+chown user python-outdated
 su user << EOR
 cd python-outdated
 makepkg
@@ -134,6 +137,7 @@ EOR
 pacman -U --noconfirm python-outdated/python-outdated*.tar.zst
 rm -rf python-outdated
 git clone https://aur.archlinux.org/python-cheap_repr.git
+chown user python-cheap_repr
 su user << EOR
 cd python-cheap_repr
 makepkg
@@ -142,6 +146,7 @@ EOR
 pacman -U --noconfirm python-cheap_repr/python-cheap_repr*.tar.zst
 rm -rf python-cheap_repr
 git clone https://aur.archlinux.org/python-flask-humanize.git
+chown user python-flask-humanize
 su user << EOR
 cd python-flask-humanize
 makepkg
@@ -150,6 +155,7 @@ EOR
 pacman -U --noconfirm python-flask-humanize/python-flask-humanize*.tar.zst
 rm -rf python-flask-humanize
 git clone https://aur.archlinux.org/python-pgzero.git
+chown user python-pgzero
 su user << EOR
 cd python-pgzero
 makepkg
@@ -158,6 +164,7 @@ EOR
 pacman -U --noconfirm python-pgzero/python-pgzero*.tar.zst
 rm -rf python-pgzero
 git clone https://aur.archlinux.org/python-selenium.git
+chown user python-selenium
 su user << EOR
 cd python-selenium
 makepkg
@@ -166,6 +173,7 @@ EOR
 pacman -U --noconfirm python-selenium/python-selenium*.tar.zst
 rm -rf python-selenium
 git clone https://aur.archlinux.org/python-birdseye.git
+chown user python-birdseye
 su user << EOR
 cd python-birdseye
 makepkg
@@ -174,6 +182,7 @@ EOR
 pacman -U --noconfirm python-birdseye/python-birdseye*.tar.zst
 rm -rf python-birdseye
 git clone https://aur.archlinux.org/thonny.git
+chown user thonny
 su user << EOR
 cd thonny
 makepkg
@@ -182,6 +191,7 @@ EOR
 pacman -U --noconfirm thonny/thonny*.tar.zst
 rm -rf thonny
 git clone https://aur.archlinux.org/visual-studio-code-bin.git
+chown user visual-studio-code-bin
 su user << EOR
 cd visual-studio-code-bin
 makepkg
@@ -190,6 +200,7 @@ EOR
 pacman -U --noconfirm visual-studio-code-bin/visual-studio-code-bin*.tar.zst
 rm -rf visual-studio-code-bin
 git clone https://aur.archlinux.org/libicu50.git
+chown user libicu50
 su user << EOR
 cd libicu50
 makepkg
@@ -198,6 +209,7 @@ EOR
 pacman -U --noconfirm libicu50/libicu50*.tar.zst
 rm -rf libicu50
 git clone https://aur.archlinux.org/gconf.git
+chown user gconf
 su user << EOR
 cd gconf
 makepkg
@@ -206,6 +218,7 @@ EOR
 pacman -U --noconfirm gconf/gconf*.tar.zst
 rm -rf gconf
 git clone https://aur.archlinux.org/icu70.git
+chown user icu70
 su user << EOR
 cd icu70
 makepkg
@@ -214,6 +227,7 @@ EOR
 pacman -U --noconfirm icu70/icu70*.tar.zst
 rm -rf icu70
 git clone https://aur.archlinux.org/icu69.git
+chown user icu69
 su user << EOR
 cd icu69
 makepkg
@@ -222,6 +236,7 @@ EOR
 pacman -U --noconfirm icu69/icu69*.tar.zst
 rm -rf icu69
 git clone https://aur.archlinux.org/unityhub.git
+chown user unityhub
 su user << EOR
 cd unityhub
 makepkg
