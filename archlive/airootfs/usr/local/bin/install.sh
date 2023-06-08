@@ -107,7 +107,16 @@ chown user /home/user/Desktop
 chown user /home/user/Videos
 chown user /home/user/Pictures
 chown user /home/user/Music
-pacman -S --noconfirm libreoffice-fresh krusader ranger btop neovim thunderbird firefox geogebra neovim blueman freecad blender gimp krita git base-devel sudo esptool hicolor-icon-theme mypy python-asttokens python-docutils python-jedi python-pillow python-pip python-ptyprocess python-pylint python-send2trash python-setuptools python-wheel python-build python-installer tk python-numpy python-pygame python-cached-property python python-django python-pytest python-humanize python-littleutils python-sqlalchemy python-setuptools-scm python-beautifulsoup4 python-flask python-markupsafe python-pandas geckodriver python-requests python-certifi python-debugpy python-importlib-metadata python-inflection python-multidict python-urllib3 alsa-lib gcc-libs glibc gnupg gtk3 libnotify libsecret libxkbfile libxss lsof nss shared-mime-info glib2 libdbusmenu-glib gnome-keyring cpio openssl-1.1 libappindicator-gtk3 clang make sh patch dbus-glib libldap libxml2 polkit gnome-common gobject-introspection gtk-doc intltool nemo go python-exceptiongroup python-trio python-wsproto xorg-drivers xorg xorg-apps appstream-glib archlinux-appstream-data desktop-file-utils gnutls json-glib libhandy vte3 asciidoc gettext itstool meson ninja vala xorgproto lxsession polkit-gnome libsoup3 libusb libusb-compat python-pyserial usbutils freetype2 libxrender libxtst which gtk2 libglvnd libpng zlib libxft tcl gumbo-parser libjpeg-turbo libtiff tcllib maven jre17-openjdk xdg-utils npm nodejs-lts-fermium snappy re2 minizip libxslt libevent ffmpeg c-ares kde-cli-tools trash-cli xdg-desktop-portal util-linux fuse2
+pacman -S --noconfirm libreoffice-fresh krusader ranger btop neovim thunderbird firefox geogebra neovim blueman freecad blender gimp krita git base-devel sudo esptool hicolor-icon-theme mypy python-asttokens python-docutils python-jedi python-pillow python-pip python-ptyprocess python-pylint python-send2trash python-setuptools python-wheel python-build python-installer tk python-numpy python-pygame python-cached-property python python-django python-pytest python-humanize python-littleutils python-sqlalchemy python-setuptools-scm python-beautifulsoup4 python-flask python-markupsafe python-pandas geckodriver python-requests python-certifi python-debugpy python-importlib-metadata python-inflection python-multidict python-urllib3 alsa-lib gcc-libs glibc gnupg gtk3 libnotify libsecret libxkbfile libxss lsof nss shared-mime-info glib2 libdbusmenu-glib gnome-keyring cpio openssl-1.1 libappindicator-gtk3 clang make sh patch dbus-glib libldap libxml2 polkit gnome-common gobject-introspection gtk-doc intltool nemo go python-exceptiongroup python-trio python-wsproto xorg-drivers xorg xorg-apps appstream-glib archlinux-appstream-data desktop-file-utils gnutls json-glib libhandy vte3 asciidoc gettext itstool meson ninja vala xorgproto lxsession polkit-gnome libsoup3 libusb libusb-compat python-pyserial usbutils freetype2 libxrender libxtst which gtk2 libglvnd libpng zlib libxft tcl gumbo-parser libjpeg-turbo libtiff maven jre17-openjdk xdg-utils npm nodejs-lts-fermium snappy re2 minizip libxslt libevent ffmpeg c-ares kde-cli-tools trash-cli xdg-desktop-portal util-linux fuse2
+git clone https://aur.archlinux.org/tcllib.git
+chown admin tcllib
+su admin << EOR
+cd tcllib
+makepkg
+cd ..
+EOR
+pacman -U --noconfirm tcllib/tcllib
+rm -rf tcllib
 git clone https://aur.archlinux.org/yay-bin.git
 chown admin yay-bin
 su admin << EOR
@@ -275,15 +284,6 @@ cd ..
 EOR
 pacman -U --noconfirm arduino-ide-bin/arduino-ide-bin*.tar.zst
 rm -rf arduino-ide-bin
-git clone https://aur.archlinux.org/ncurses5-compat-libs.git
-chown admin ncurses5-compat-libs
-su admin << EOR
-cd ncurses5-compat-libs
-makepkg
-cd ..
-EOR
-pacman -U --noconfirm ncurses5-compat-libs/ncurses5-compat-libs*.tar.zst
-rm -rf ncurses5-compat-libs
 git clone https://aur.archlinux.org/android-studio.git
 chown admin android-studio
 su admin << EOR
